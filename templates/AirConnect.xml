@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AirConnect</Name>
+  <Repository>1activegeek/airconnect</Repository>
+  <Registry>https://hub.docker.com/r/1activegeek/airconnect/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>AirConnect container for turning Chromecast into Airplay targets&#xD;
+[br][br]&#xD;
+This is a containerized build of the fantastic program by philippe44 called AirConnect. It allows you to be able to use AirPlay to push audio to Chromecast and UPNP based devices. There are some advanced details and information that you should review on his GitHub Project. &#xD;
+[br][br]&#xD;
+[b]https://github.com/philippe44/AirConnect[/b]&#xD;
+[br][br]&#xD;
+For the most part this container needs nothing more than to launch it using Host networking.</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Other Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/airconnect.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/ahildebrand12/docker-templates/main/images/AirConnect.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648664088</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>AirConnect container for turning Chromecast into Airplay targets&#xD;
+[br][br]&#xD;
+This is a containerized build of the fantastic program by philippe44 called AirConnect. It allows you to be able to use AirPlay to push audio to Chromecast and UPNP based devices. There are some advanced details and information that you should review on his GitHub Project. &#xD;
+[br][br]&#xD;
+[b]https://github.com/philippe44/AirConnect[/b]&#xD;
+[br][br]&#xD;
+For the most part this container needs nothing more than to launch it using Host networking.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/airconnect</HostDir>
+      <ContainerDir>/airconnectconfig</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>-x /airconnectconfig/config.txt</Value>
+      <Name>AIRCAST_VAR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-x /airconnectconfig/config-airupnp.txt</Value>
+      <Name>AIRUPNP_VAR</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/airconnectconfig" Default="" Mode="rw" Description="Container Path: /airconnectconfig" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/airconnect</Config>
+  <Config Name="Host Key 1" Target="AIRCAST_VAR" Default="" Mode="" Description="Container Variable: AIRCAST_VAR" Type="Variable" Display="always" Required="false" Mask="false">-x /airconnectconfig/config.txt</Config>
+  <Config Name="Host Key 2" Target="AIRUPNP_VAR" Default="" Mode="" Description="Container Variable: AIRUPNP_VAR" Type="Variable" Display="always" Required="false" Mask="false">-x /airconnectconfig/config-airupnp.txt</Config>
+</Container>
