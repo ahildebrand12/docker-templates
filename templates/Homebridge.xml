@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Homebridge</Name>
+  <Repository>oznu/homebridge:ubuntu</Repository>
+  <Registry>https://registry.hub.docker.com/r/oznu/homebridge/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://homebridge.io</Project>
+  <Overview>&#xD;
+Homebridge allows you to integrate with smart home devices that do not natively support HomeKit. There are over 2,000 Homebridge plugins supporting thousands of different smart accessories.&#xD;
+  </Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI>http://[IP]:[PORT:8581]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/oznu/docker-homebridge/master/homebridge.xml</TemplateURL>
+  <Icon>https://github.com/ahildebrand12/docker-templates/blob/main/images/homebridge.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648663903</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+Homebridge allows you to integrate with smart home devices that do not natively support HomeKit. There are over 2,000 Homebridge plugins supporting thousands of different smart accessories.&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/homebridge</HostDir>
+      <ContainerDir>/homebridge</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1</Value>
+      <Name>HOMEBRIDGE_CONFIG_UI</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8581</Value>
+      <Name>HOMEBRIDGE_CONFIG_UI_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/homebridge" Default="/mnt/user/appdata/homebridge" Mode="rw" Description="Container Path: /homebridge" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/homebridge</Config>
+  <Config Name="Key 1" Target="HOMEBRIDGE_CONFIG_UI" Default="1" Mode="" Description="Container Variable: HOMEBRIDGE_CONFIG_UI" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="Key 2" Target="HOMEBRIDGE_CONFIG_UI_PORT" Default="8581" Mode="" Description="Container Variable: HOMEBRIDGE_CONFIG_UI_PORT" Type="Variable" Display="always" Required="false" Mask="false">8581</Config>
+  <Config Name="Key 3" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 4" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>
