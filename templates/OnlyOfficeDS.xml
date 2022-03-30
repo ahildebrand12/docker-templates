@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OnlyOfficeDS</Name>
+  <Repository>chvb/onlyofficedocumentserver:latest</Repository>
+  <Registry>https://hub.docker.com/repository/docker/chvb/onlyofficedocumentserver</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>http://lime-technology.com/forum/index.php?topic=49578.0</Support>
+  <Project>https://www.onlyoffice.com/</Project>
+  <Overview>&#xD;
+	  This Version is without the connection Limit of 20 Users and supports the mobile editing.&#xD;
+    ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time.&#xD;
+	HTTPS Support can be enable creating a "certs" folder in the data directory and placing onlyoffice.crt and onlyoffice.key in it. Add fonts by placing [fontname].ttf in the font folder and force updating the container.  &#xD;
+  </Overview>
+  <Category>Productivity Tools</Category>
+  <WebUI>http://[IP]:[PORT:8888]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/chvb/docker-templates/master/chvb/OnlyOfficeDocumentServer.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/ahildebrand12/docker-templates/main/images/onlyoffice.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648665795</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+	  This Version is without the connection Limit of 20 Users and supports the mobile editing.&#xD;
+    ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time.&#xD;
+	HTTPS Support can be enable creating a "certs" folder in the data directory and placing onlyoffice.crt and onlyoffice.key in it. Add fonts by placing [fontname].ttf in the font folder and force updating the container.  &#xD;
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyofficeds/logs</HostDir>
+      <ContainerDir>/var/log/onlyoffice</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyofficeds/Data</HostDir>
+      <ContainerDir>/var/www/onlyoffice/Data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyofficeds/lib</HostDir>
+      <ContainerDir>/var/lib/onlyoffice</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyofficeds/database</HostDir>
+      <ContainerDir>/var/lib/postgresql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyofficeds/fonts</HostDir>
+      <ContainerDir>/usr/share/fonts/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
+  <Config Name="Host Path 1" Target="/var/log/onlyoffice" Default="/mnt/user/appdata/onlyofficeds/logs" Mode="rw" Description="Container Path: /var/log/onlyoffice" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyofficeds/logs</Config>
+  <Config Name="Host Path 2" Target="/var/www/onlyoffice/Data" Default="/mnt/user/appdata/onlyofficeds/Data" Mode="rw" Description="Container Path: /var/www/onlyoffice/Data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyofficeds/Data</Config>
+  <Config Name="Host Path 3" Target="/var/lib/onlyoffice" Default="/mnt/user/appdata/onlyofficeds/lib" Mode="rw" Description="Container Path: /var/lib/onlyoffice" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyofficeds/lib</Config>
+  <Config Name="Host Path 4" Target="/var/lib/postgresql" Default="/mnt/user/appdata/onlyofficeds/database" Mode="rw" Description="Container Path: /var/lib/postgresql" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyofficeds/database</Config>
+  <Config Name="Host Path 5" Target="/usr/share/fonts/" Default="/mnt/user/appdata/onlyofficeds/fonts" Mode="rw" Description="Container Path: /usr/share/fonts/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyofficeds/fonts</Config>
+</Container>

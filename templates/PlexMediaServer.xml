@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Plex-Media-Server</Name>
+  <Repository>plexinc/pms-docker</Repository>
+  <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.plex.tv/categories/docker</Support>
+  <Project>https://plex.tv/</Project>
+  <Overview>Plex Media Server&#xD;
+ &#xD;
+    Enjoy your media on all your devices.&#xD;
+    All your movie, TV Show, music, and photo collections at your fingertips, anywhere you go on all the devices you love.</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+  <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/plexinc/pms-docker/master/plex-unRAID.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/ahildebrand12/docker-templates/main/images/plex.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648665996</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Plex Media Server&#xD;
+ &#xD;
+    Enjoy your media on all your devices.&#xD;
+    All your movie, TV Show, music, and photo collections at your fingertips, anywhere you go on all the devices you love.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>32400</HostPort>
+        <ContainerPort>32400</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>32469</HostPort>
+        <ContainerPort>32469</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1900</HostPort>
+        <ContainerPort>1900</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plex/transcode</HostDir>
+      <ContainerDir>/transcode</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plex/data</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media</HostDir>
+      <ContainerDir>/mnt/user/Media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plex/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>claim-mYDGkdRpM6MqND8CwBJf</Value>
+      <Name>PLEX_CLAIM</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PLEX_UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PLEX_GID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>latest</Value>
+      <Name>VERSION</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 2" Target="/transcode" Default="" Mode="rw" Description="Container Path: /transcode" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/plex/transcode</Config>
+  <Config Name="Host Path 3" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/plex/data</Config>
+  <Config Name="Key 1" Target="PLEX_CLAIM" Default="Insert Token from https://plex.tv/claim" Mode="" Description="Container Variable: PLEX_CLAIM" Type="Variable" Display="always" Required="false" Mask="false">claim-mYDGkdRpM6MqND8CwBJf</Config>
+  <Config Name="Key 2" Target="PLEX_UID" Default="99" Mode="" Description="Container Variable: PLEX_UID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 3" Target="PLEX_GID" Default="100" Mode="" Description="Container Variable: PLEX_GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Key 4" Target="VERSION" Default="latest" Mode="" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="false" Mask="false">latest</Config>
+  <Config Name="Http" Target="32400" Default="" Mode="tcp" Description="Container Port: 32400" Type="Port" Display="always" Required="false" Mask="false">32400</Config>
+  <Config Name="Library" Target="/mnt/user/Media" Default="" Mode="rw" Description="Container Path: /mnt/user/Media" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media</Config>
+  <Config Name="Host Port 2" Target="32469" Default="" Mode="tcp" Description="Container Port: 32469" Type="Port" Display="always" Required="false" Mask="false">32469</Config>
+  <Config Name="Host Port 3" Target="1900" Default="" Mode="udp" Description="Container Port: 1900" Type="Port" Display="always" Required="false" Mask="false">1900</Config>
+  <Config Name="/dev/dri" Target="" Default="" Mode="" Description="Container Device: " Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/Plex-Media-Server" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/plex/config</Config>
+</Container>

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MinecraftServer</Name>
+  <Repository>binhex/arch-minecraftserver</Repository>
+  <Registry>https://registry.hub.docker.com/r/binhex/arch-minecraftserver/</Registry>
+  <Network>br0</Network>
+  <MyIP>10.10.65.90</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including&#x2014;but not limited to&#x2014;a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.</Overview>
+  <Category>GameServers:</Category>
+  <WebUI>http://[IP]:[PORT:8222]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/minecraftserver.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/ahildebrand12/docker-templates/main/images/minecraftserver.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648665093</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including&#x2014;but not limited to&#x2014;a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>25565</HostPort>
+        <ContainerPort>25565</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8222</HostPort>
+        <ContainerPort>8222</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/minecraft/binhexserver</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>12</Value>
+      <Name>CREATE_BACKUP_HOURS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>14</Value>
+      <Name>PURGE_BACKUP_DAYS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>yes</Value>
+      <Name>ENABLE_WEBUI_CONSOLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>yes</Value>
+      <Name>ENABLE_WEBUI_AUTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin</Value>
+      <Name>WEBUI_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>chooseapassword</Value>
+      <Name>WEBUI_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Minecraft Java</Value>
+      <Name>WEBUI_CONSOLE_TITLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/config/minecraft/spigot-1.18.2.jar</Value>
+      <Name>CUSTOM_JAR_PATH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>latest</Value>
+      <Name>JAVA_VERSION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>512M</Value>
+      <Name>JAVA_INITIAL_HEAP_SIZE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>4096M</Value>
+      <Name>JAVA_MAX_HEAP_SIZE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>4</Value>
+      <Name>JAVA_MAX_THREADS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>STARTUP_CMD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="25565" Default="25565" Mode="tcp" Description="Container Port: 25565" Type="Port" Display="always" Required="true" Mask="false">25565</Config>
+  <Config Name="Host Port 2" Target="8222" Default="8222" Mode="tcp" Description="Container Port: 8222" Type="Port" Display="always" Required="true" Mask="false">8222</Config>
+  <Config Name="Key 1" Target="CREATE_BACKUP_HOURS" Default="12" Mode="" Description="Container Variable: CREATE_BACKUP_HOURS" Type="Variable" Display="always" Required="false" Mask="false">12</Config>
+  <Config Name="Key 2" Target="PURGE_BACKUP_DAYS" Default="14" Mode="" Description="Container Variable: PURGE_BACKUP_DAYS" Type="Variable" Display="always" Required="false" Mask="false">14</Config>
+  <Config Name="Key 3" Target="ENABLE_WEBUI_CONSOLE" Default="yes" Mode="" Description="Container Variable: ENABLE_WEBUI_CONSOLE" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+  <Config Name="Key 4" Target="ENABLE_WEBUI_AUTH" Default="yes" Mode="" Description="Container Variable: ENABLE_WEBUI_AUTH" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+  <Config Name="Key 5" Target="WEBUI_USER" Default="admin" Mode="" Description="Container Variable: WEBUI_USER" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Key 6" Target="WEBUI_PASS" Default="" Mode="" Description="Container Variable: WEBUI_PASS" Type="Variable" Display="always" Required="false" Mask="false">Ah26089600</Config>
+  <Config Name="Key 7" Target="WEBUI_CONSOLE_TITLE" Default="Minecraft Java" Mode="" Description="Container Variable: WEBUI_CONSOLE_TITLE" Type="Variable" Display="always" Required="false" Mask="false">Minecraft Java</Config>
+  <Config Name="Key 8" Target="CUSTOM_JAR_PATH" Default="/config/minecraft/minecraft_server.jar" Mode="" Description="Container Variable: CUSTOM_JAR_PATH" Type="Variable" Display="always" Required="false" Mask="false">/config/minecraft/spigot-1.18.2.jar</Config>
+  <Config Name="Key 9" Target="JAVA_VERSION" Default="latest" Mode="" Description="Container Variable: JAVA_VERSION" Type="Variable" Display="always" Required="false" Mask="false">latest</Config>
+  <Config Name="Key 10" Target="JAVA_INITIAL_HEAP_SIZE" Default="512M" Mode="" Description="Container Variable: JAVA_INITIAL_HEAP_SIZE" Type="Variable" Display="always" Required="false" Mask="false">512M</Config>
+  <Config Name="Key 11" Target="JAVA_MAX_HEAP_SIZE" Default="1024M" Mode="" Description="Container Variable: JAVA_MAX_HEAP_SIZE" Type="Variable" Display="always" Required="false" Mask="false">4096M</Config>
+  <Config Name="Key 12" Target="JAVA_MAX_THREADS" Default="1" Mode="" Description="Container Variable: JAVA_MAX_THREADS" Type="Variable" Display="always" Required="false" Mask="false">4</Config>
+  <Config Name="Key 13" Target="STARTUP_CMD" Default="" Mode="" Description="Container Variable: STARTUP_CMD" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Key 14" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="Key 15" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 16" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-minecraftserver" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/minecraft/binhexserver</Config>
+</Container>
