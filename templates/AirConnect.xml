@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AirConnect</Name>
+  <Repository>1activegeek/airconnect</Repository>
+  <Registry>https://hub.docker.com/r/1activegeek/airconnect/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>AirConnect container for turning Google Cast and uPnP into AirPlay targets.&#xD;
+&#xD;
+You will see two Config File environment variables at the bottom of this template. One is for Google Cast devices and one is for uPnP devices.&#xD;
+&#xD;
+Change the variables to -i instead of -x for the first launch. This will scan the network and create a config file containing the Google Cast and uPnP devices on the network. Then stop the container and change back to -x. &#xD;
+&#xD;
+Now you can edit the config file and change the names and other parameters of the AirPlay targets.&#xD;
+&#xD;
+More information on parameters can be found here:&#xD;
+https://github.com/ahildebrand12/docker-templates/blob/main/resources/AirConnect/README.md</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Other Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/airconnect.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/ahildebrand12/docker-templates/main/images/AirConnect.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648733947</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>AirConnect container for turning Google Cast and uPnP into AirPlay targets.&#xD;
+&#xD;
+You will see two Config File environment variables at the bottom of this template. One is for Google Cast devices and one is for uPnP devices.&#xD;
+&#xD;
+Change the variables to -i instead of -x for the first launch. This will scan the network and create a config file containing the Google Cast and uPnP devices on the network. Then stop the container and change back to -x. &#xD;
+&#xD;
+Now you can edit the config file and change the names and other parameters of the AirPlay targets.&#xD;
+&#xD;
+More information on parameters can be found here:&#xD;
+https://github.com/ahildebrand12/docker-templates/blob/main/resources/AirConnect/README.md</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/airconnect</HostDir>
+      <ContainerDir>/airconnectconfig</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>-x /airconnectconfig/config.txt</Value>
+      <Name>AIRCAST_VAR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-x /airconnectconfig/config-airupnp.txt</Value>
+      <Name>AIRUPNP_VAR</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/airconnectconfig" Default="" Mode="rw" Description="Container Path: /airconnectconfig" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/airconnect</Config>
+  <Config Name="Google Cast Config File" Target="AIRCAST_VAR" Default="" Mode="" Description="Container Variable: AIRCAST_VAR" Type="Variable" Display="always" Required="false" Mask="false">-x /airconnectconfig/config.txt</Config>
+  <Config Name="uPnP Config File" Target="AIRUPNP_VAR" Default="" Mode="" Description="Container Variable: AIRUPNP_VAR" Type="Variable" Display="always" Required="false" Mask="false">-x /airconnectconfig/config-airupnp.txt</Config>
+</Container>
